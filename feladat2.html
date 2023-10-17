@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecsedi js4 feladat2</title>
+    <script>
+        class Felhasznalo {
+            #nev;
+            #jelszo;
+            #BoD;
+            #email;
+            constructor(nev,jelszo,BoD,email){
+                this.#nev=nev;
+                this.#jelszo=jelszo1;
+                this.#BoD=BoD;
+                this.#email=email;
+            }
+        }
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const nev = document.getElementById("nev");
+            const jelszo1 = document.getElementById("jelszo1");
+            const jelszo2 = document.getElementById("jelszo2");
+            const BoD = document.getElementById("BoD");
+            const email = document.getElementById("email");
+            const bekuld = document.getElementById("bekuld");
+
+            bekuld.addEventListener("click", ()=>{
+                if (jelszo1 != jelszo2)
+                {
+                    alert("A jelszók hibásak")
+                }
+                else if (jelszo1.lenght() < 5)
+                {
+                    alert("A jelszó legyen hosszabb mint 5 karakter")
+                }
+                else if (4 < nev.lenght() < 17)
+                {
+                    alert("A jelszó 5 és 16 karakter közötti legyen")
+                }
+                else {
+                    const user = new Felhasznalo(nev,jelszo1,BoD,email)
+                    console.log(user)
+                    alert("A regisztráció elkészült")
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Regisztráció</p>
+    <label for="nev">Név</label>
+    <input type="text" id="nev">
+
+    <label for="jelszo1">Jelszó</label>
+    <input type="text" id="jelszo1">
+    <label for="jelszo2">Újra</label>
+    <input type="text" id="jelszo2">
+
+    <label for="BoD">Születésnap ÉÉÉÉ-HH-NN</label>
+    <input type="text" id="BoD">
+
+    <label for="email">Email</label>
+    <input type="text" id="email">
+
+    <button id="bekuld">Beküld</button>
+</body>
+</html>

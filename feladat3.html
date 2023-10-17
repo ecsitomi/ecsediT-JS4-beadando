@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecsedi js4 feladat3</title>
+    <script>
+        class Felhasznalo {
+            #nev;
+            #eletkor;
+            #varos;
+            #email;
+            #hobby;
+            #iskola
+            constructor(nev,eletkor,varos,email,hobby,iskola){
+                this.#nev=nev;
+                this.#eletkor=eletkor;
+                this.#varos=varos;
+                this.#email=email;
+                this.#hobby=hobby;
+                this.#iskola=iskola;
+            }
+        }
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const nev = document.getElementById("nev");
+            const eletkor = document.getElementById("eletkor");
+            const varos = document.getElementById("varos");
+            const hobby = document.getElementById("hobby");
+            const email = document.getElementById("email");
+            const iskola = document.getElementById("iskola");
+            const bekuld = document.getElementById("bekuld");
+
+            bekuld.addEventListener("click", ()=>{
+                if (nev || eletkor || varos || hobby || email || iskola == "")
+                {
+                    alert("Adjon meg minden adatot")
+                }
+                else {
+                    const user = new Felhasznalo(nev,email,eletkor,varos,hobby,iskola)
+                    console.log(user)
+                    alert("A regisztráció elkészült")
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Regisztráció</p>
+    <label for="nev">Név</label>
+    <input type="text" id="nev">
+
+    <label for="jelszo1">Életkor</label>
+    <input type="text" id="eletkor">
+
+    <label for="jelszo2">Város</label>
+    <input type="text" id="varos">
+
+    <label for="BoD">Hobby</label>
+    <input type="text" id="hobby">
+
+    <label for="email">Email</label>
+    <input type="text" id="email">
+
+    <label for="email">Iskola</label>
+    <input type="text" id="iskola">
+
+    <button id="bekuld">Beküld</button>
+</body>
+</html>

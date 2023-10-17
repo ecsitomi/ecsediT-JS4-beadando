@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecsedi JS4 beadandó Feladat 1</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const feladat1 = document.getElementById("feladat1");
+            const gomb = document.getElementById("gomb");
+            const kicsi = document.getElementById("kics").checked;
+            const nagy = document.getElementById("nagy").checked;
+            const kimenet = document.getElementById("kimenet");
+
+            gomb.addEventListener("click", () => {
+                if (feladat1.trim()=="")
+                {
+                    alert("írjon be szöveget")
+                }
+                if (kicsi.checked)
+                {
+                    kimenet.innerText=feladat1.toLowerCase();
+                }
+                else if (nagy.checked)
+                {
+                    kimenet.innerText=feladat1.toUpperCase();
+                }
+                else 
+                {
+                    alert("Válassza ki a betűméretet")
+                }
+            });
+        });  
+    </script>
+</head>
+<body>
+    <label for="feladat1">Bevitel</label>
+    <input type="text" id="feladat1">
+
+    <label for="kicsi">Kisbetűs</label>
+    <input type="radio" id="kicsi">
+    <label for="nagy">Nagybetűs</label>
+    <input type="radio" id="nagy">
+
+    <button id="gomb">Átalakítás</button>
+
+    <p>Kimenet</p>
+    <p id="kimenet"></p>
+</body>
+</html>
